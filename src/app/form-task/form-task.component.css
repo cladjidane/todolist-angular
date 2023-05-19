@@ -1,0 +1,42 @@
+form {
+  display: block;
+  max-width: 1200px;
+  min-width: 320px;
+  width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+}
+
+form .fields {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+form label {
+  display: block;
+  color: black;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+form select {
+  width: 50%;
+  margin: 10px 0;
+  padding: 12px 10px;
+  font-size: 15px;
+}
+
+form input {
+  width: 50%;
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 15px;
+}
+
+form button {
+  padding: 10px;
+  font-size: 15px;
+}
