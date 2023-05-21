@@ -1,8 +1,7 @@
-<li data-key="60" class="task ok">
-  <input type="checkbox" checked="checked" /><span>Première tâche</span
-  >
+<li data-key="60" class="{{ status === 'finish' ? 'ok' : null }} task">
+  <input type="checkbox" [attr.checked]="status === 'finish' ? true : null" />
+  <span>{{ taskname }}</span>
   <app-button type="circle">
-    <img src="../../assets/images/fermer.svg"/>
+    <img src="../../assets/images/fermer.svg" />
   </app-button>
-  
 </li>
