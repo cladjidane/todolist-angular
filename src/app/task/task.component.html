@@ -1,7 +1,15 @@
-<li data-key="60" class="{{ status === 'finish' ? 'ok' : null }} task">
-  <input type="checkbox" [attr.checked]="status === 'finish' ? true : null" />
-  <span>{{ taskname }}</span>
-  <app-button type="circle">
+<li
+  id="{{ task.id }}"
+  class="{{ task.status === 'finish' ? 'ok' : null }} task"
+>
+  <input
+    type="checkbox"
+    [attr.checked]="task.status === 'finish' ? true : null"
+    (click)="updateStatus()"
+  />
+
+  <span>{{ task.taskname }}</span>
+  <app-button type="circle" (click)="deleteTask()">
     <img src="../../assets/images/fermer.svg" />
   </app-button>
 </li>

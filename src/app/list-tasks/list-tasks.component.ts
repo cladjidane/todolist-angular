@@ -5,8 +5,9 @@ import { Component } from '@angular/core';
   templateUrl: './list-tasks.component.html',
   styleUrls: ['./list-tasks.component.css'],
 })
+
 export class ListTasksComponent {
-  tasks = [
+  tasks: any[] = [
     {
       id: 'task-1',
       taskname: 'Saluer le boss',
@@ -28,4 +29,10 @@ export class ListTasksComponent {
       status: 'pending',
     },
   ];
+
+  removeTask(task: any): void {
+    const index = this.tasks.indexOf(task);
+    if (index !== -1) this.tasks.splice(index, 1);
+  }
 }
+

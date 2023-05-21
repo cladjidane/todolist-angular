@@ -1,7 +1,3 @@
 <ul class="list-todo">
-  <app-task
-    *ngFor="let task of tasks"
-    [taskname]="task.taskname"
-    [status]="task.status"
-  ></app-task>
+  <app-task *ngFor="let task of tasks" [task]="task" (delete)="removeTask($event)"></app-task>
 </ul>

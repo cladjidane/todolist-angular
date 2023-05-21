@@ -1,6 +1,4 @@
-
-
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-task',
@@ -8,7 +6,14 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./task.component.css'],
 })
 export class TaskComponent {
-  @Input() status: string = 'pending';
-  @Input() taskname: string = '';
-}
+  @Input() task: any;
+  @Output() delete: EventEmitter<any> = new EventEmitter();
 
+  updateStatus(): void {
+    this.task.status = this.task.status === 'pending' ? 'finish' : 'pending';
+  }
+
+  deleteTask(): void {
+    this.delete.emit(this.task);
+  }
+}
