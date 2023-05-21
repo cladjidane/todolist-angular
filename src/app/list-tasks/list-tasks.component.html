@@ -1,5 +1,7 @@
 <ul class="list-todo">
-  <app-task taskname="Passer le balai" status="pending"></app-task>
-  <app-task taskname="Saluer le boss" status="finish"></app-task>
-  <app-task taskname="Bosser un peu quand même" status="pending"></app-task>
+  <app-task
+    *ngFor="let task of tasks"
+    [taskname]="task.taskname"
+    [status]="task.status"
+  ></app-task>
 </ul>
