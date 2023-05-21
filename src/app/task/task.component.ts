@@ -1,3 +1,5 @@
+
+
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -9,3 +11,4 @@ export class TaskComponent {
   @Input() status: string = 'pending';
   @Input() taskname: string = '';
 }
+
