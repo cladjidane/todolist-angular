@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-task',
@@ -6,6 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./task.component.css'],
 })
 export class TaskComponent {
-  @Input() status: string = 'pending';
-  @Input() taskname: string = '';
+  status: string = 'pending';
+  taskname: string = '';
 }
