@@ -10,7 +10,7 @@ export class ListTasksComponent {
     {
       id: 'task-1',
       taskname: 'Saluer le boss',
-      status: 'pending',
+      status: 'finish',
     },
     {
       id: 'task-2',
@@ -20,6 +20,11 @@ export class ListTasksComponent {
     {
       id: 'task-3',
       taskname: 'Travailler un peu quand même !',
+      status: 'pending',
+    },
+    {
+      id: 'task-4',
+      taskname: 'Mail pour Tatiana',
       status: 'pending',
     },
   ];
