@@ -1,9 +1,10 @@
 <div class="container full-100">
-  
   <app-header></app-header>
 
-  <app-form-task></app-form-task>
-  
-  <app-list-tasks></app-list-tasks>
+  <app-form-task (add)="addTask($event)" [tasks]="taskList"></app-form-task>
 
+  <app-list-tasks
+    [tasks]="taskList"
+    (delete)="deleteTask($event)"
+  ></app-list-tasks>
 </div>
