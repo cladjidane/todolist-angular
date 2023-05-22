@@ -14,15 +14,15 @@
 
 /* Task delete button */
 .circle {
-    height: 20px;
-    width: 20px;
-    margin-left: auto;
-    padding: 0;
-    background: transparent;
-    border: none;
-  }
-  
-  .circle img {
-    width: 20px;
-    pointer-events: none;
-  }
+  height: 20px;
+  width: 20px;
+  margin-left: auto;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.circle img {
+  width: 20px;
+  pointer-events: none;
+}
