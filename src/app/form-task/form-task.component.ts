@@ -6,7 +6,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./form-task.component.css']
 })
 export class FormTaskComponent {
-  @Input() newTask: any
+  newTask: string | undefined;
   @Output() add: EventEmitter<any> = new EventEmitter();
 
   addTask() {
