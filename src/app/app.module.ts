@@ -8,6 +8,7 @@ import { FormTaskComponent } from './form-task/form-task.component';
 import { ListTasksComponent } from './list-tasks/list-tasks.component';
 import { TaskComponent } from './task/task.component';
 import { ButtonComponent } from './button/button.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ButtonComponent } from './button/button.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
