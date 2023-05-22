@@ -30,6 +30,9 @@ export class ListTasksComponent {
     },
   ];
 
+  tasksPending = this.tasks.filter((task) => task.status === "pending")
+  tasksFinish = this.tasks.filter((task) => task.status === "finish")
+
   removeTask(task: any): void {
     const index = this.tasks.indexOf(task);
     if (index !== -1) this.tasks.splice(index, 1);
