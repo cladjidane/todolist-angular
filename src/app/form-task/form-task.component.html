@@ -1,7 +1,7 @@
 <form (submit)="addTask()">
   <label for="item">Ajouter une tâche</label>
   <div class="fields">
-    <input type="text" id="item" placeholder="Intitulé de la tâche" />
+    <input name="taskName" [(ngModel)]="newTask" type="text" id="item" placeholder="Intitulé de la tâche" />
     ou
     <select>
       <option value="">Choisir une tâche</option>
