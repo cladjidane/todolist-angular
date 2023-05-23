@@ -1,7 +1,17 @@
-<ul class="list-todo">
-  <app-task *ngFor="let task of tasksPending" [task]="task" (delete)="removeTask($event)"></app-task>
-</ul>
 
-<ul class="list-todo">
-  <app-task *ngFor="let task of tasksFinish" [task]="task" (delete)="removeTask($event)"></app-task>
-</ul>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <ul class="list-todo">
+        <app-task *ngFor="let task of tasksPending" [task]="task" (update)="updateTask($event)"></app-task>
+      </ul>
+    </div>
+    <div class="col">
+      <ul class="list-todo">
+        <app-task *ngFor="let task of tasksFinish"[task]="task" (delete)="deleteTask($event)"></app-task>
+      </ul>
+    </div>
+  </div>
+</div>
+

@@ -5,7 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './list-tasks.component.html',
   styleUrls: ['./list-tasks.component.css'],
 })
-
 export class ListTasksComponent {
   tasks: any[] = [
     {
@@ -30,12 +29,23 @@ export class ListTasksComponent {
     },
   ];
 
-  tasksPending = this.tasks.filter((task) => task.status === "pending")
-  tasksFinish = this.tasks.filter((task) => task.status === "finish")
+  tasksPending = this.tasks.filter((task) => task.status === 'pending');
+  tasksFinish = this.tasks.filter((task) => task.status === 'finish');
 
-  removeTask(task: any): void {
+  updateTask(updatedTask: any): void {
+    const index = this.tasks.findIndex((task) => task.id === updatedTask.id);
+    if (index !== -1) {
+      const updatedTasks = [...this.tasks];
+      updatedTasks.splice(index, 1, updatedTask);
+      this.tasks = updatedTasks;
+
+      this.tasksPending = this.tasks.filter((task) => task.status === 'pending');
+      this.tasksFinish = this.tasks.filter((task) => task.status === 'finish');
+    }
+  }
+
+  deleteTask(task: any): void {
     const index = this.tasks.indexOf(task);
     if (index !== -1) this.tasks.splice(index, 1);
   }
 }
-
