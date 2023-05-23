@@ -9,7 +9,7 @@
   />
 
   <span>{{ task.taskname }}</span>
-  <app-button type="circle" (click)="deleteTask()">
+  <app-button *ngIf="task.status === 'finish'" type="circle" (click)="deleteTask()">
     <img src="../../assets/images/fermer.svg" />
   </app-button>
 </li>

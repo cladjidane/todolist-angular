@@ -9,7 +9,7 @@
     </div>
     <div class="col">
       <ul class="list-todo">
-        <app-task *ngFor="let task of tasksFinish"[task]="task" (delete)="deleteTask($event)"></app-task>
+        <app-task *ngFor="let task of tasksFinish"[task]="task" (delete)="deleteTask($event)"  (update)="updateTask($event)"></app-task>
       </ul>
     </div>
   </div>

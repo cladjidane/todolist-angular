@@ -47,5 +47,8 @@ export class ListTasksComponent {
   deleteTask(task: any): void {
     const index = this.tasks.indexOf(task);
     if (index !== -1) this.tasks.splice(index, 1);
+
+    this.tasksPending = this.tasks.filter((task) => task.status === 'pending');
+    this.tasksFinish = this.tasks.filter((task) => task.status === 'finish');
   }
 }
