@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { TaskService } from '../task.service';
 
 @Component({
   selector: 'app-list-tasks',
@@ -8,4 +7,5 @@ import { TaskService } from '../task.service';
 })
 export class ListTasksComponent {
   @Input() tasks: any[] | undefined;
+
 }
