@@ -5,7 +5,7 @@
   <input
     type="checkbox"
     [attr.checked]="task.status === 'finish' ? true : null"
-    (click)="updateStatus()"
+    (click)="updateTask()"
   />
 
   <span>{{ task.taskname }}</span>

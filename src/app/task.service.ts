@@ -34,8 +34,12 @@ export class TaskService {
   addTask(task: any) {
     this.tasks.push(task);
   }
+  
+  updateTask(task: any): void {
+    
+  }
 
-  removeTask(task: any): void {
+  deleteTask(task: any): void {
     const index = this.tasks.indexOf(task);
     if (index !== -1) this.tasks.splice(index, 1);
   }
