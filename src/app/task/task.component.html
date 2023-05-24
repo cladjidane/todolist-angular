@@ -1,14 +1,14 @@
 <li
   id="{{ task.id }}"
-  class="{{ task.status === 'finish' ? 'ok' : null }} task"
+  class="{{ task.completed ? 'ok' : null }} task"
 >
   <input
     type="checkbox"
-    [attr.checked]="task.status === 'finish' ? true : null"
+    [attr.checked]="task.completed ? true : null"
     (click)="updateStatus()"
   />
 
-  <span>{{ task.taskname }}</span>
+  <span>{{ task.todo }}</span>
   <app-button type="circle" (click)="deleteTask()">
     <img src="../../assets/images/fermer.svg" />
   </app-button>

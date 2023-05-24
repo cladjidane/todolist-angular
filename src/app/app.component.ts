@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent implements OnInit {
   title = 'todolist-angular';
-  tasks: any = []
+  tasks = []
 
   constructor(private taskService: TaskService) { }
 
@@ -19,8 +19,8 @@ export class AppComponent implements OnInit {
 
   fetchTasks() {
     this.taskService.getTasks().subscribe(
-      response => {
-        this.tasks = response;
+      (response: any) => {
+        this.tasks = response.todos;
       },
       error => {
         console.error('Une erreur s\'est produite lors de la récupération des tâches :', error);

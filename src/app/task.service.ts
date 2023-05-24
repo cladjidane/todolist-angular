@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class TaskService {
-tasks = []
+tasks: any = []
 
   constructor(private http: HttpClient) { }
 
@@ -15,11 +15,11 @@ tasks = []
   }
 
   addTask(task: any) {
-    //this.tasks.push(task);
+    this.tasks.push(task);
   }
 
-  removeTask(task: any): void {
-    //const index = this.tasks.indexOf(task);
-    //if (index !== -1) this.tasks.splice(index, 1);
+  deleteTask(task: any): void {
+    // const index = this.tasks.indexOf(task);
+    // if (index !== -1) this.tasks.splice(index, 1);
   }
 }

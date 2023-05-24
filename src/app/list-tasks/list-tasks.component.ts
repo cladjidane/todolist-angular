@@ -1,5 +1,4 @@
-import { Component, Input } from '@angular/core';
-import { TaskService } from '../task.service';
+import { Component, DoCheck, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-list-tasks',
@@ -7,12 +6,12 @@ import { TaskService } from '../task.service';
   styleUrls: ['./list-tasks.component.css'],
 })
 
-export class ListTasksComponent {
-
+export class ListTasksComponent implements DoCheck{
   @Input() tasks: any[] | undefined;
 
-  removeTask(task: any) {
-    //this.taskService.removeTask(task);
+  ngDoCheck() {
+    console.log(this.tasks)
   }
+  
 }
 

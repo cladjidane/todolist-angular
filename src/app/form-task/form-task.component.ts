@@ -14,8 +14,8 @@ export class FormTaskComponent {
   addTask() {
     const task = {
       id: this.taskService.tasks.length,
-      taskname: this.newTask,
-      status: 'pending'
+      todo: this.newTask,
+      completed: false
     };
 
     this.taskService.addTask(task);

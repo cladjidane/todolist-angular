@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { TaskService } from '../task.service';
 
 @Component({
   selector: 'app-task',
@@ -7,13 +8,13 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class TaskComponent {
   @Input() task: any;
-  @Output() delete: EventEmitter<any> = new EventEmitter();
-
+  constructor(private taskService: TaskService) { }
+  
   updateStatus(): void {
-    this.task.status = this.task.status === 'pending' ? 'finish' : 'pending';
+    this.taskService.addTask(this.task);
   }
 
   deleteTask(): void {
-    this.delete.emit(this.task);
+    this.taskService.deleteTask(this.task);
   }
 }
