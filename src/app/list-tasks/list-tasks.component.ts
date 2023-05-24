@@ -6,6 +6,8 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./list-tasks.component.css'],
 })
 export class ListTasksComponent {
-  @Input() tasks: any[] | undefined;
+  @Input() tasks: any[] = [];
 
+  tasksPending = this.tasks.filter((task) => task.status === 'pending');
+  tasksFinish = this.tasks.filter((task) => task.status === 'finish');
 }
