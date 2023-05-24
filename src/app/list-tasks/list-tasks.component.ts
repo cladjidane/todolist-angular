@@ -7,7 +7,17 @@ import { Component, Input } from '@angular/core';
 })
 export class ListTasksComponent {
   @Input() tasks: any[] = [];
+  tasksPending: any[] = []; 
+  tasksFinish: any[] = []; 
 
-  tasksPending = this.tasks.filter((task) => task.status === 'pending');
-  tasksFinish = this.tasks.filter((task) => task.status === 'finish');
+  ngOnInit() {
+    this.tasksPending = this.tasks.filter((task) => task.status === 'pending');
+    this.tasksFinish = this.tasks.filter((task) => task.status === 'finish');
+  }
+
+  ngDoCheck() {
+    this.tasksPending = this.tasks.filter((task) => task.status === 'pending');
+    this.tasksFinish = this.tasks.filter((task) => task.status === 'finish');
+  }
+
 }
