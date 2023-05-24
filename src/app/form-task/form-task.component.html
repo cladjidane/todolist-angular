@@ -1,15 +1,26 @@
-<form (submit)="addTask()">
-  <label for="item">Ajouter une tâche</label>
-  <div class="fields">
-    <input name="taskName" [(ngModel)]="newTask" type="text" id="item" placeholder="Intitulé de la tâche" />
-    ou
-    <select>
-      <option value="">Choisir une tâche</option>
-      <option value="Passer le balai">Passer le balai</option>
-      <option value="Saluer le boss">Saluer le boss</option>
-      <option value="Couper l'ordi">Couper l'ordi</option>
-    </select>
+<form (submit)="addTask()" class="bg-white rounded p-5 mb-4">
+  <label for="item" class="h3">Ajouter une tâche</label>
+  <div class="row">
+    <div class="col">
+      <input
+        name="taskName"
+        class="w-100 p-2"
+        [(ngModel)]="newTask"
+        type="text"
+        id="item"
+        placeholder="Intitulé de la tâche"
+      />
+    </div>
+    <div class="col">
+      <select 
+      class="w-100 p-2">
+        <option value="">Choisir une tâche</option>
+        <option value="Passer le balai">Passer le balai</option>
+        <option value="Saluer le boss">Saluer le boss</option>
+        <option value="Couper l'ordi">Couper l'ordi</option>
+      </select>
+    </div>
   </div>
 
-  <app-button type="button">Ajouter</app-button>
+  <app-button type="button" class="mt-4">Ajouter</app-button>
 </form>
