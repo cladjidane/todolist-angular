@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { TaskService } from '../task.service';
 
 @Component({
@@ -7,11 +7,5 @@ import { TaskService } from '../task.service';
   styleUrls: ['./list-tasks.component.css'],
 })
 export class ListTasksComponent {
-  tasks: any[] | undefined;
-
-  constructor(private taskService: TaskService) {}
-
-  ngOnInit() {
-    this.tasks = this.taskService.getTasks();
-  }
+  @Input() tasks: any[] | undefined;
 }
