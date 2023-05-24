@@ -14,11 +14,14 @@ export class TaskComponent implements OnInit {
     console.log(this.task); // Affiche les tâches reçues dans la console
   }
 
-  updateStatus(): void {
-    this.update.emit(this.task);
-  }
-
   deleteTask(): void {
     this.delete.emit(this.task);
+  }
+
+  updateStatus(): void {
+    this.update.emit({
+      ...this.task,
+      status: this.task.status === 'pending' ? 'finish' : 'pending',
+    });
   }
 }
