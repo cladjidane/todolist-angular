@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from './task.service';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -18,13 +17,13 @@ export class AppComponent implements OnInit {
   }
 
   fetchTasks() {
-    this.taskService.getTasks().subscribe(
-      (response: any) => {
+    this.taskService.getTasks().subscribe({
+      next: (response: any) => {
         this.tasks = response.todos;
       },
-      error => {
+      error: (error) => {
         console.error('Une erreur s\'est produite lors de la récupération des tâches :', error);
       }
-    );
+    });
   }
 }
