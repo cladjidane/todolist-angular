@@ -1,16 +1,17 @@
 <li
   id="{{ task.id }}"
-  class="{{ task.status === 'finish' ? 'text-decoration-line-through' : null }} rounded bg-white mb-2 d-flex justify-content-start p-2 align-items-center"
+  class="{{ task.status === 'finish' ? 'text-decoration-line-through' : null }} rounded bg-white d-flex justify-content-start p-2 align-items-center"
 >
   <input
+    *ngIf="!readonly"
     type="checkbox"
     [attr.checked]="task.status === 'finish' ? true : null"
     (click)="updateTask()"
     class="me-2"
   />
 
-  <span>{{ task.taskname }}</span>
-  <app-button *ngIf="task.status === 'finish'" type="circle" (click)="deleteTask()" class="ms-auto cursor-pointer">
+  <a [routerLink]="['/task', task.id]">{{ task.taskname }}</a>
+  <app-button *ngIf="task.status === 'finish' || !readonly" type="circle" (click)="deleteTask()" class="ms-auto cursor-pointer">
     <img src="../../assets/images/fermer.svg" />
   </app-button>
 </li>

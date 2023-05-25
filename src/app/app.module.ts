@@ -11,6 +11,7 @@ import { ButtonComponent } from './button/button.component';
 import { FormsModule } from '@angular/forms';
 import { TasksComponent } from './tasks/tasks.component';
 import { HomeComponent } from './home/home.component';
+import { TaskDetailsComponent } from './task-details/task-details.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HomeComponent } from './home/home.component';
     TaskComponent,
     ButtonComponent,
     TasksComponent,
-    HomeComponent
+    HomeComponent,
+    TaskDetailsComponent
   ],
   imports: [
     BrowserModule,

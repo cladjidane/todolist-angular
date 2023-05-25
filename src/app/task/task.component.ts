@@ -8,6 +8,7 @@ import { TaskService } from '../task.service';
 })
 export class TaskComponent {
   @Input() task: any;
+  @Input() readonly: boolean = false
   constructor(private taskService: TaskService) { }
 
   deleteTask() {

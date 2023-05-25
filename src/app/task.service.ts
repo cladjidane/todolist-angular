@@ -31,6 +31,17 @@ export class TaskService {
     return this.tasks;
   }
 
+  getTask(id: string | number | null): any[] {
+    return this.tasks.filter(task => task.id === id)[0];
+  }
+
+  getHomeTasks(): any[] {
+    let filteredTasks = this.tasks.reverse();
+    return filteredTasks.filter(task => {
+      return task.status === "pending"
+    });
+  }
+
   addTask(task: any) {
     this.tasks.push(task);
   }
