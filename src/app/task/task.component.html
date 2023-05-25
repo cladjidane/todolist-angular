@@ -10,7 +10,7 @@
   />
 
   <span>{{ task.taskname }}</span>
-  <app-button [ngIf]="task.status === 'finish'" type="circle" (click)="deleteTask()" class="ms-auto cursor-pointer">
+  <app-button *ngIf="task.status === 'finish'" type="circle" (click)="deleteTask()" class="ms-auto cursor-pointer">
     <img src="../../assets/images/fermer.svg" />
   </app-button>
 </li>
