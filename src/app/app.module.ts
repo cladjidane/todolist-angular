@@ -9,6 +9,8 @@ import { ListTasksComponent } from './list-tasks/list-tasks.component';
 import { TaskComponent } from './task/task.component';
 import { ButtonComponent } from './button/button.component';
 import { FormsModule } from '@angular/forms';
+import { TasksComponent } from './tasks/tasks.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { FormsModule } from '@angular/forms';
     FormTaskComponent,
     ListTasksComponent,
     TaskComponent,
-    ButtonComponent
+    ButtonComponent,
+    TasksComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
